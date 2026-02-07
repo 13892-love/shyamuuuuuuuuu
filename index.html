@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day SHYAMUUUU 💝</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(to bottom right, #ffe6f0, #fff);
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container {
+        background: rgba(255,255,255,0.9);
+        padding: 25px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        z-index: 2;
+    }
+
+    h1 {
+        color: #e60073;
+        margin-bottom: 15px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        position: relative;
+        height: 80px;
+    }
+
+    button {
+        padding: 12px 22px;
+        font-size: 16px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #yesBtn {
+        background: #e60073;
+        color: white;
+    }
+
+    #noBtn {
+        background: #ccc;
+        position: absolute;
+    }
+
+    .message {
+        display: none;
+        margin-top: 20px;
+        color: #444;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 15px;
+    }
+
+    /* Heart balloons */
+    .heart {
+        position: absolute;
+        color: rgba(255,0,102,0.5);
+        font-size: 22px;
+        animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 😊</button>
+        <button id="noBtn">No 🙈</button>
+    </div>
+
+    <div class="message" id="message">
+        <h2>I knew you’d say YES 🤍</h2>
+        <p>
+           Valentine’s Day is a gentle reminder that some of the most beautiful
+            connections in life are built on friendship 😩— on trust, laughter,
+              shared memories, and quiet understanding❤️‍🩹🎀.  
+        </p>
+       <p>
+            I’m grateful for a friendship that brings warmth on ordinary days
+            and strength during challenging ones🥺❤️. The moments we’ve shared,
+            the support we’ve offered each other, and the positivity we continue
+            to grow with make this bond truly special.😙😙😙
+        </p>
+          <p>
+            Today is a celebration of kindness, appreciation, and the comfort
+            of knowing there is someone who truly understands you🥹. Thank you
+            for being a wonderful presence and for making life brighter in
+            your own thoughtful way.🫂
+        </p><!-- Add your photo here -->
+        <img src="photo.jpg" alt="Friendship Photo">
+    </div>
+</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("click", moveButton);
+
+    function moveButton() {
+        const x = Math.random() * 250;
+        const y = Math.random() * 60;
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+
+    yesBtn.addEventListener("click", () => {
+        message.style.display = "block";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+    });
+
+    // Create floating hearts
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }, 400);
+</script>
+
+</body>
+</html>
